@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scripts/水晶.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Audios/Collection.WAV" type="AudioStream" id=2]
+
+[sub_resource type="CylinderMesh" id=1]
+top_radius = 0.0
+bottom_radius = 0.15
+height = 0.3
+radial_segments = 4
+rings = 0
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.313726, 0.768627, 0.992157, 0.784314 )
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.4
+emission_enabled = true
+emission = Color( 0.266667, 0.756863, 1, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+refraction_enabled = true
+refraction_scale = 0.1
+refraction_texture_channel = 0
+
+[sub_resource type="CapsuleShape" id=3]
+radius = 0.159376
+height = 0.276554
+
+[sub_resource type="SphereShape" id=4]
+radius = 1.57105
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("1:rotation_degrees:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("1:rotation_degrees:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("1:rotation_degrees:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "旋转"
+length = 5.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("1:rotation_degrees:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 360, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 5 )
+}
+
+[node name="水晶" type="Area"]
+script = ExtResource( 1 )
+
+[node name="1" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="2" type="MeshInstance" parent="1"]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.3, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 2 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0 )
+light_color = Color( 0, 0.670588, 1, 1 )
+light_energy = 4.0
+shadow_enabled = true
+shadow_color = Color( 0, 0.670588, 1, 1 )
+omni_range = 2.19961
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.148782, 0 )
+shape = SubResource( 3 )
+
+[node name="区域检测" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="区域检测"]
+shape = SubResource( 4 )
+
+[node name="Get" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "旋转"
+anims/RESET = SubResource( 5 )
+"anims/旋转" = SubResource( 6 )
+
+[connection signal="body_entered" from="." to="." method="_on_sj_body_entered"]
+[connection signal="body_entered" from="区域检测" to="." method="_on_CheckPlayer_body_entered"]

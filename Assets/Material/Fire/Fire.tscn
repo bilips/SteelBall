@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Material/Fire/FireParticles.tres" type="Material" id=1]
+[ext_resource path="res://Assets/Material/Fire/Fire.tres" type="Material" id=2]
+
+[sub_resource type="QuadMesh" id=6]
+size = Vector2( 0.5, 0.5 )
+
+[node name="Fire" type="Particles"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00127661, 1.12437, -0.00154066 )
+material_override = ExtResource( 2 )
+cast_shadow = 0
+amount = 50
+randomness = 0.74
+local_coords = false
+draw_order = 1
+process_material = ExtResource( 1 )
+draw_pass_1 = SubResource( 6 )

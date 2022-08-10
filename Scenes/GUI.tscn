@@ -1,0 +1,484 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Assets/Fonts/MainFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/GUI.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Icons/circle-2.svg" type="Texture" id=3]
+[ext_resource path="res://Assets/Icons/circle-1.svg" type="Texture" id=4]
+[ext_resource path="res://Assets/Icons/line.svg" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+extra_spacing_top = 10
+extra_spacing_bottom = 10
+extra_spacing_char = 5
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 0.235294 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFont" id=3]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 60
+extra_spacing_top = 20
+extra_spacing_bottom = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 0.392157 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 0.470588 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 0, 0, 0.313726 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="DynamicFont" id=8]
+size = 100
+extra_spacing_top = 10
+extra_spacing_bottom = 10
+extra_spacing_char = 5
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 60
+extra_spacing_top = 10
+extra_spacing_bottom = 10
+extra_spacing_char = 5
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 5 )
+region_rect = Rect2( 17.1335, 92.5864, 167.747, 16.326 )
+margin_left = 2.6456
+margin_right = 3.66929
+margin_top = 12.5028
+margin_bottom = 14.1282
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0, 0.694118, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0, 0.694118, 1, 0.784314 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Animation" id=15]
+resource_name = "Hide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/Setting:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/Setting:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/Setting:rect_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Control:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Control:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Die:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Die:modulate:r")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Die:modulate:g")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("Die:modulate:b")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("Die:modulate:a")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "ShowDie"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Die:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Die:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 1 )
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "ShowSetting"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/Setting:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/Setting:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 0.5, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/Setting:rect_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 0.5, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 0, 0 ), Vector2( 1, 1 ) ]
+}
+
+[node name="GUI" type="CanvasLayer"]
+layer = 3
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Main" type="VBoxContainer" parent="Control"]
+margin_left = 128.0
+margin_top = 104.0
+margin_right = 960.0
+margin_bottom = 1029.0
+custom_constants/separation = 40
+
+[node name="Title" type="Label" parent="Control/Main"]
+margin_right = 832.0
+margin_bottom = 162.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+text = "SteelBall"
+align = 1
+valign = 1
+
+[node name="Space" type="Label" parent="Control/Main"]
+margin_top = 202.0
+margin_right = 832.0
+margin_bottom = 297.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+valign = 1
+
+[node name="StartGame" type="Button" parent="Control/Main"]
+margin_top = 337.0
+margin_right = 832.0
+margin_bottom = 448.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "StartGame"
+
+[node name="Setting" type="Button" parent="Control/Main"]
+margin_top = 488.0
+margin_right = 832.0
+margin_bottom = 599.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "Setting"
+
+[node name="HowToPlay" type="Button" parent="Control/Main"]
+margin_top = 639.0
+margin_right = 832.0
+margin_bottom = 750.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "HowToPlay"
+
+[node name="Quit" type="Button" parent="Control/Main"]
+margin_top = 790.0
+margin_right = 832.0
+margin_bottom = 901.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "Quit"
+
+[node name="Setting" type="VBoxContainer" parent="Control"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -832.0
+margin_top = 120.0
+margin_right = -128.0
+margin_bottom = 1000.0
+custom_constants/separation = 40
+
+[node name="Title" type="Label" parent="Control/Setting"]
+margin_right = 704.0
+margin_bottom = 138.0
+custom_fonts/font = SubResource( 8 )
+custom_styles/normal = SubResource( 2 )
+text = "Setting"
+align = 1
+valign = 1
+
+[node name="BGM" type="Label" parent="Control/Setting"]
+margin_top = 178.0
+margin_right = 704.0
+margin_bottom = 269.0
+custom_fonts/font = SubResource( 9 )
+text = "BGM:"
+valign = 1
+
+[node name="SetBGM" type="HSlider" parent="Control/Setting"]
+margin_top = 309.0
+margin_right = 704.0
+margin_bottom = 339.0
+focus_mode = 0
+custom_icons/grabber_highlight = ExtResource( 4 )
+custom_icons/grabber = ExtResource( 3 )
+custom_styles/slider = SubResource( 12 )
+custom_styles/grabber_area_highlight = SubResource( 10 )
+custom_styles/grabber_area = SubResource( 11 )
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Audio" type="Label" parent="Control/Setting"]
+margin_top = 379.0
+margin_right = 704.0
+margin_bottom = 470.0
+custom_fonts/font = SubResource( 9 )
+text = "Audio:"
+valign = 1
+
+[node name="SetAudio" type="HSlider" parent="Control/Setting"]
+margin_top = 510.0
+margin_right = 704.0
+margin_bottom = 540.0
+focus_mode = 0
+custom_icons/grabber_highlight = ExtResource( 4 )
+custom_icons/grabber = ExtResource( 3 )
+custom_styles/slider = SubResource( 12 )
+custom_styles/grabber_area_highlight = SubResource( 10 )
+custom_styles/grabber_area = SubResource( 11 )
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="FullScreen" type="CheckBox" parent="Control/Setting"]
+margin_top = 580.0
+margin_right = 704.0
+margin_bottom = 679.0
+focus_mode = 0
+custom_fonts/font = SubResource( 9 )
+custom_icons/checked = ExtResource( 4 )
+custom_icons/unchecked = ExtResource( 3 )
+text = "FullScreen"
+
+[node name="ShowFPS" type="CheckBox" parent="Control/Setting"]
+margin_top = 719.0
+margin_right = 704.0
+margin_bottom = 818.0
+focus_mode = 0
+custom_fonts/font = SubResource( 9 )
+custom_icons/checked = ExtResource( 4 )
+custom_icons/unchecked = ExtResource( 3 )
+text = "ShowFPS"
+
+[node name="Die" type="ColorRect" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Hide = SubResource( 15 )
+anims/RESET = SubResource( 13 )
+anims/ShowDie = SubResource( 16 )
+anims/ShowSetting = SubResource( 14 )
+
+[connection signal="pressed" from="Control/Main/StartGame" to="." method="_on_StartGame_pressed"]
+[connection signal="pressed" from="Control/Main/Setting" to="." method="_on_Setting_pressed"]
+[connection signal="pressed" from="Control/Main/HowToPlay" to="." method="_on_HowToPlay_pressed"]
+[connection signal="pressed" from="Control/Main/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="value_changed" from="Control/Setting/SetBGM" to="." method="_on_SetBGM_value_changed"]
+[connection signal="value_changed" from="Control/Setting/SetAudio" to="." method="_on_SetAudio_value_changed"]
+[connection signal="toggled" from="Control/Setting/FullScreen" to="." method="_on_FullScreen_toggled"]
+[connection signal="toggled" from="Control/Setting/ShowFPS" to="." method="_on_ShowFPS_toggled"]

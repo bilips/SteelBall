@@ -1,0 +1,20 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Material/Grass/grass1-normal1-ogl.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Material/Grass/grass1-albedo.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Material/Grass/grass1-ao.png" type="Texture" id=3]
+
+[resource]
+albedo_color = Color( 0.580392, 0.580392, 0.580392, 1 )
+albedo_texture = ExtResource( 2 )
+roughness = 0.8
+roughness_texture = ExtResource( 2 )
+normal_enabled = true
+normal_scale = 8.0
+normal_texture = ExtResource( 1 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 3 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+uv1_triplanar = true

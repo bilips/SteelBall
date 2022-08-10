@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Material/Fire/stylized_fire.shader" type="Shader" id=1]
+[ext_resource path="res://Assets/Material/Fire/FireMask.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Material/Fire/HoleNoise.png" type="Texture" id=3]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/emission_intensity = 2.0
+shader_param/time_scale = 3.0
+shader_param/texture_scale = Vector2( 1, 1 )
+shader_param/edge_softness = 0.1
+shader_param/noise_texture = ExtResource( 3 )
+shader_param/texture_mask = ExtResource( 2 )
